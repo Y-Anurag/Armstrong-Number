@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+main()
+{
+    int no, O_no, remainder, r=0, ct=0 ;
+    printf("Enter an integer: ");
+    scanf("%d", &no);
+     O_no = no;
+    
+    while (O_no != 0)
+    {
+        O_no /= 10;
+        ct++;
+    }
+    O_no = no;
+    while (O_no != 0)
+    {
+        remainder = O_no%10;
+        r+= pow(remainder, ct);
+        O_no /= 10;
+    }
+    if(r == no)
+        printf("%d is an Armstrong number.", no);
+    else
+        printf("%d is not an Armstrong number.", no);
+}
